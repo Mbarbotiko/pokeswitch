@@ -1,0 +1,50 @@
+[{
+    "id": 1,
+    "image": "/images/pokemon-images/image1.png"
+  },
+  {
+    "id": 2,
+    "image": "/images/pokemon-images/image2.png"
+  },
+  {
+    "id": 3,
+    "image": "/images/pokemon-images/image3.png"
+  },
+  {
+    "id": 4,
+    "image": "/images/pokemon-images/image4.png"
+  },
+  {
+    "id": 5,
+    "image": "/images/pokemon-images/image5.png"
+  },
+  {
+    "id": 6,
+    "image": "/images/pokemon-images/image6.png"
+  },
+  {
+    "id": 7,
+    "image": "/images/pokemon-images/image7.png"
+  },
+  {
+    "id": 8,
+    "image": "/images/pokemon-images/image8.png"
+  },
+  {
+    "id": 9,
+    "image": "/images/pokemon-images/image9.png"
+  },
+  {
+    "id": 10,
+    "image": "/images/pokemon-images/image10.png"
+  },
+  {
+    "id": 11,
+    "image": "/images/pokemon-images/image11.png"
+  },
+  {
+    "id": 12,
+    "image": "/images/pokemon-images/image12.png"
+  }
+
+]
