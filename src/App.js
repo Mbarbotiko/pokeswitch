@@ -8,8 +8,13 @@ import Pokemon from "./components/Pokemon";
 class App extends Component {
   state = {
     pokemon
+   
   };
 
+  randomPokemon = () => {
+    this.state.pokemon.sort(() => Math.random() - 0.5)
+    this.setState({ pokemon });
+  };
 
 
   render() {
@@ -18,10 +23,14 @@ class App extends Component {
         <Title>Pokemon Memory</Title>
         {this.state.pokemon.map(poke => (
           <Pokemon
+          randomPokemon={this.randomPokemon}
             id={poke.id}
             key={poke.id}
             image={poke.image}
+            name={poke.name}
           />
+
+
         ))}
       </Wrapper>
     );

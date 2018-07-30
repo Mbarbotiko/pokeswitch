@@ -1,9 +1,16 @@
 import React from "react";
 import "./Pokemon.css";
 
-const PokemonImage = props =>(
-    <div class="card text-white bg-light mb-3">
-    <img alt={props.id} src={props.image}/>
+const PokemonImage = props => (
+    <div className="card text-white bg-light mb-3"
+        onClick={() => 
+            props.randomPokemon(props.id)+
+            console.log(props.name+' '+props.id)}
+            >
+            <img alt={props.id} src={props.image} />
+
+            
+    
     </div>
 
 );
