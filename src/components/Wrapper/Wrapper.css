@@ -1,6 +1,8 @@
 .wrapper {
+  width:90%;
+  margin:auto;
   padding-top: 50px;
-  background: #ECEFF1;
+  background: rgb(148, 218, 148);
   height: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -9,5 +11,6 @@
   align-content: flex-start;
   overflow: auto;
   font-family: 'Luckiest Guy', cursive;
+  margin-bottom:100px;
 }
 

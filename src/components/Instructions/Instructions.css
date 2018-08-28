@@ -1,0 +1,15 @@
+.instructions{
+  text-align: center;
+  width:80%;
+  font-size:2em;
+  font-family: 'Luckiest Guy', cursive;
+  color:rgb(136, 218, 136);
+  margin:auto;
+}
+
+
+@media only screen and (max-width: 550px) {
+  .instructions{
+    font-size: 1.5em;
+  }
+}

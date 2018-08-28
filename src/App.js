@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import pokemon from "./pokemon.json";
 import Title from "./components/Title";
+import Instructions from "./components/Instructions";
 import Wrapper from "./components/Wrapper";
 import PokemonImage from "./components/Pokemon";
 import Scoreboard from "./components/Scoreboard";
@@ -89,8 +90,10 @@ class App extends Component {
 
   render() {
     return (
-      <Wrapper>
+      <div>
         <Title>Pokemon Memory</Title>
+        <Instructions>Test your memory, click on each picture only once, get through all 12 and you will win a sense of pride</Instructions>
+        <Wrapper>
         {this.state.pokemon.map(item => (
           <PokemonImage
             randomPokemon={this.handlePokemonClick}
@@ -102,6 +105,7 @@ class App extends Component {
         ))}
         <Scoreboard score={this.state.score} topScore={this.state.topScore} />
       </Wrapper>
+      </div>
     );
   }
 };
