@@ -26,11 +26,11 @@ class ScoreboardMessage extends Component {
   renderMessage = () => {
     switch (this.state.message) {
     case "correct":
-      return "You guessed correctly!";
+      return "Nice! Keep going!";
     case "incorrect":
-      return "You guessed incorrectly!";
+      return "Uh oh you lose!";
     default:
-      return "Click an image to begin!";
+      return "Click a Pokemon to begin!";
     }
   };
 
