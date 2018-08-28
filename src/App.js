@@ -3,7 +3,7 @@ import './App.css';
 import pokemon from "./pokemon.json";
 import Title from "./components/Title";
 import Wrapper from "./components/Wrapper";
-import Pokemon from "./components/Pokemon";
+import PokemonImage from "./components/Pokemon";
 import Scoreboard from "./components/Scoreboard";
 // import MySmallModal from "./components/Modal";
 // import { ButtonToolbar} from 'react-bootstrap';
@@ -13,50 +13,94 @@ import Scoreboard from "./components/Scoreboard";
 class App extends Component {
   state = {
     pokemon,
-    score:0
-   
+    score: 0,
+    topScore: 0
+
   };
 
-  randomPokemon = () => {
-    this.state.pokemon.sort(() => Math.random() - 0.5)
-    console.log(pokemon)
-    this.setState({ pokemon });
-    
+  componentDidMount() {
+    this.setState({ pokemon: this.shufflePokemon(this.state.pokemon) });
+  }
+
+  shufflePokemon = pokemon => {
+    let i = pokemon.length - 1;
+    while (i > 0) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = pokemon[i];
+      pokemon[i] = pokemon[j];
+      pokemon[j] = temp;
+      i--;
+    }
+    return pokemon;
+  };
+  //function to ranomely display pokemon
+
+  correctGuessHandler = newPokemon => {
+    const { topScore, score } = this.state;
+    const newScore = score + 1;
+    const newTopScore = newScore > topScore ? newScore : topScore;
+    this.setState({
+      pokemon: this.shufflePokemon(newPokemon),
+      score: newScore,
+      topScore: newTopScore
+    });
+  };
+  //if the user chooses a pokemon that hasnt been clicked yet set the score +1, if the new score is higher than the top score set the top score to the new score, execute function to mix up pokemon.
+
+
+  incorrectGuessHandler = pokemon => {
+    this.setState({
+      pokemon: this.resetPokemon(pokemon),
+      score: 0
+    });
   };
 
+  //if the incorrect pokemon has been chosen (a previously clicked pokemon) reset the score and the pokemon logged.
 
-//    updateVeryNestedField=(state, action)=>{
-//     return {
-//         ...state,
-//         first : {
-//             ...state.first,
-//             second : {
-//                 ...state.first.second,
-//                 [action.someId] : {
-//                     ...state.first.second[action.someId],
-//                     fourth : action.someValue
-//                 }
-//             }
-//         }
-//     }
-// } use this to "push" to a "new" array, its a method called spread that alters the state without mutating/ changing the original, can use this to collect ID from the onclicks and then do an if else afterwards
 
+  resetPokemon = pokemon => {
+    const resetPokemon = pokemon.map(item => ({ ...item, clicked: false }));
+    return this.shufflePokemon(resetPokemon);
+  };
+
+  //function for resetting pokemon that are logged during user clicks , cycle through the pokemon data, change them to false versus true
+
+  handlePokemonClick = id => {
+    let guessedCorrectly = false;
+    console.log(guessedCorrectly);
+    const newPokemon = this.state.pokemon.map(item => {
+      const newItem = { ...item };
+      console.log(newItem);
+      if (newItem.id === id) {
+        if (!newItem.clicked) {
+          newItem.clicked = true;
+          guessedCorrectly = true;
+        }
+
+      } return newItem
+    });
+    guessedCorrectly
+      ? this.correctGuessHandler(newPokemon)
+      : this.incorrectGuessHandler(newPokemon);
+  }
+
+  //changing pokemon that are clicked to true copying the object into "items" to check against if the user guessed Correctly run the correct guess function, if now run the incorect guess function.
 
 
   render() {
     return (
       <Wrapper>
         <Title>Pokemon Memory</Title>
-        {this.state.pokemon.map(poke => (
-          <Pokemon
-          randomPokemon={this.randomPokemon}
-            id={poke.id}
-            key={poke.id}
-            image={poke.image}
-            name={poke.name}
+        {this.state.pokemon.map(item => (
+          <PokemonImage
+            randomPokemon={this.handlePokemonClick}
+            id={item.id}
+            key={item.id}
+            image={item.image}
+
           />
         ))}
-        <Scoreboard/>
+        <Scoreboard score={this.state.score} topScore={this.state.topScore} />
       </Wrapper>
     );
   }
