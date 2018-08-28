@@ -6,6 +6,7 @@ import Instructions from "./components/Instructions";
 import Wrapper from "./components/Wrapper";
 import PokemonImage from "./components/Pokemon";
 import Scoreboard from "./components/Scoreboard";
+
 // import MySmallModal from "./components/Modal";
 // import { ButtonToolbar} from 'react-bootstrap';
 // import { Button} from 'react-bootstrap';
@@ -34,7 +35,7 @@ class App extends Component {
     }
     return pokemon;
   };
-  //function to ranomely display pokemon
+  //function to randomly display pokemon
 
   correctGuessHandler = newPokemon => {
     const { topScore, score } = this.state;
@@ -85,7 +86,7 @@ class App extends Component {
       : this.incorrectGuessHandler(newPokemon);
   }
 
-  //changing pokemon that are clicked to true copying the object into "items" to check against if the user guessed Correctly run the correct guess function, if now run the incorect guess function.
+  //changing pokemon that are clicked to true copying the object into "items" to check against if the user guessed Correctly run the correct guess function, if now run the incorrect guess function.
 
 
   render() {
@@ -94,17 +95,19 @@ class App extends Component {
         <Title>Pokemon Memory</Title>
         <Instructions>Test your memory, click on each picture only once, get through all 12 and you will win a sense of pride</Instructions>
         <Wrapper>
-        {this.state.pokemon.map(item => (
-          <PokemonImage
-            randomPokemon={this.handlePokemonClick}
-            id={item.id}
-            key={item.id}
-            image={item.image}
+          {this.state.pokemon.map(item => (
+            <PokemonImage
+              randomPokemon={this.handlePokemonClick}
+              id={item.id}
+              key={item.id}
+              image={item.image}
 
-          />
-        ))}
-        <Scoreboard score={this.state.score} topScore={this.state.topScore} />
-      </Wrapper>
+            />
+          ))}
+          <Scoreboard score={this.state.score} topScore={this.state.topScore}>
+          </Scoreboard>
+       
+        </Wrapper>
       </div>
     );
   }

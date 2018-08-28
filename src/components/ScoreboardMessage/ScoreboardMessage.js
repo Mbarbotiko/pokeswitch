@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./ScoreboardMessage.css";
+import yay from './win1.gif';
 
 
 
@@ -23,10 +24,11 @@ class ScoreboardMessage extends Component {
     );
   }
 
+
   renderMessage = () => {
     switch (this.state.message) {
     case "correct":
-      return "Nice! Keep going!";
+      return <img src={yay} width="100" height="50" />;
     case "incorrect":
       return "Uh oh you lose!";
     default:
