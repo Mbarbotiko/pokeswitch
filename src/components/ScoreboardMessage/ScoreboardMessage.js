@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./ScoreboardMessage.css";
-import ModalExample from "../Modal";
+import PokeModal from "../Modal";
 
 
 
@@ -24,36 +24,25 @@ class ScoreboardMessage extends Component {
     );
   }
 
-   
-
+  
   renderMessage = () => {
     
     switch (this.state.message) {
     case "correct":
       return "Nice! Keep going!";
     case "incorrect":
-      return <ModalExample/>;
+      return <PokeModal/>;
     default:
       return "Click a Pokemon to begin!";
     }
   };
 
-  userLoseModal = () =>{
-
-  }
-
-  userWinModal=()=>{
-    alert("Oh hey you won")
-  }
-
-
 
   render() {
     return (
-      <li className={this.state.animating ? this.state.message : ""}>
+      <ul className={this.state.animating ? this.state.message : ""}>
         {this.renderMessage()}
-    
-      </li>
+      </ul>
     );
   }
 }

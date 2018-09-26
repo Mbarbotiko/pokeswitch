@@ -12,5 +12,6 @@
   overflow: auto;
   font-family: 'Luckiest Guy', cursive;
   margin-bottom:200px;
+  max-width: 1800px;
 }
 

@@ -3,9 +3,9 @@
 
 }
 
-.navbar .incorrect {
+/* .navbar .incorrect {
   animation: 1s incorrect;
-}
+} */
 
 @keyframes correct {
   0% {
