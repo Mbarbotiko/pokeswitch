@@ -6,10 +6,6 @@ import Instructions from "./components/Instructions";
 import Wrapper from "./components/Wrapper";
 import PokemonImage from "./components/Pokemon";
 import Scoreboard from "./components/Scoreboard";
-// import MySmallModal from "./components/Modal";
-// import { ButtonToolbar} from 'react-bootstrap';
-// import { Button} from 'react-bootstrap';
-// import { Modal} from 'react-bootstrap';
 
 class App extends Component {
   state = {
