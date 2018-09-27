@@ -2,7 +2,7 @@ import React from "react";
 import "./Modal.css";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import loser from "../../lose/lose1.gif"
-
+import InnerModal from "../InnerModal"
 class PokeModal extends React.Component {
     constructor(props) {
       super(props);

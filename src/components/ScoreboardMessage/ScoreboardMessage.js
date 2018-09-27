@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./ScoreboardMessage.css";
 import PokeModal from "../Modal";
+import loser from "../../../loser.json"
+import winner from "../../../winner.json"
 
 
 

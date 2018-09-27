@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "image": "./public/images/win/win1.gif",
+    "message": "Winner winner chicken dinner!"
+  },
+  {
+    "id": 2,
+    "image": "./public/images/win/win2.gif",
+    "message": "You caught them all!"
+  },
+  {
+    "id": 2,
+    "image": "./public/images/win/win3.gif",
+    "message": "Pokemon are the best, and now so are you!"
+  },
+  {
+    "id": 3,
+    "image": "./public/images/win/win4.gif",
+    "message": "Yo champ, play again?"
+  },
+  {
+    "id": 4,
+    "image": "./public/images/win/win5.gif",
+    "message": "Big brains you got there!"
+  }
+]
