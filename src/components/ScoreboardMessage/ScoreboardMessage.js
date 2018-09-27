@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import "./ScoreboardMessage.css";
 import PokeModal from "../Modal";
-import loser from "../../../loser.json"
-import winner from "../../../winner.json"
 
 
 
@@ -31,9 +29,9 @@ class ScoreboardMessage extends Component {
     
     switch (this.state.message) {
     case "correct":
-      return "Nice! Keep going!";
+      return "Yay"
     case "incorrect":
-      return <PokeModal/>;
+      return <PokeModal/>
     default:
       return "Click a Pokemon to begin!";
     }

@@ -1,27 +1,27 @@
 [
   {
     "id": 1,
-    "image": "./public/images/lose/lose1.gif",
+    "image": "/images/lose/lose1.gif",
     "message": "You make pokemon cry!"
   },
   {
     "id": 2,
-    "image": "./public/images/lose/lose2.gif",
+    "image": "/images/lose/lose2.gif",
     "message": "Common try again!"
   },
   {
     "id": 2,
-    "image": "./public/images/lose/lose3.gif",
+    "image": "/images/lose/lose3.gif",
     "message": "Dont give up!"
   },
   {
     "id": 3,
-    "image": "./public/images/lose/lose4.gif",
+    "image": "/images/lose/lose4.gif",
     "message": "Keep trying you've gotta be the very best"
   },
   {
     "id": 4,
-    "image": "./public/images/lose/lose5.gif",
+    "image": "/images/lose/lose5.gif",
     "message": "Dont let us down, try again!"
   }
 ]
