@@ -29,4 +29,19 @@
   }
   
 
+  @media screen and (max-width:400px){
+    .card {
+      min-width: 5rem;
+      max-width: 5rem;
+      height: 50px; 
+      margin: -10px auto;
+    }
+
+    
+  .card img{
+    top:0px;
+  }
+
+  }
+
   
