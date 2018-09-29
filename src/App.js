@@ -64,10 +64,8 @@ class App extends Component {
 
   handlePokemonClick = id => {
     let guessedCorrectly = false;
-    console.log(guessedCorrectly);
     const newPokemon = this.state.pokemon.map(item => {
       const newItem = { ...item };
-      console.log(newItem);
       if (newItem.id === id) {
         if (!newItem.clicked) {
           newItem.clicked = true;
