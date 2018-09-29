@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./ScoreboardMessage.css";
 import PokeModal from "../Modal";
+import WinnerModal from "../WinnerModal";
 
 
 
@@ -16,7 +17,10 @@ class ScoreboardMessage extends Component {
       newState.message = "";
     } else if (score === 0 && topScore > 0) {
       newState.message = "incorrect";
-    } else {
+    } else if (score === 12) {
+      newState.message = "winner"
+    }
+    else {
       newState.message = "correct";
     }
     this.setState(newState, () =>
@@ -24,16 +28,18 @@ class ScoreboardMessage extends Component {
     );
   }
 
-  
+
   renderMessage = () => {
-    
+
     switch (this.state.message) {
-    case "correct":
-      return "Yay"
-    case "incorrect":
-      return <PokeModal/>
-    default:
-      return "Click a Pokemon to begin!";
+      case "correct":
+        return "Nice! Keep going!"
+      case "winner":
+      return <WinnerModal/>
+      case "incorrect":
+        return <PokeModal />
+      default:
+        return "Click a Pokemon to begin!";
     }
   };
 
