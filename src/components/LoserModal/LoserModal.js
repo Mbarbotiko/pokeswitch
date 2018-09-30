@@ -1,9 +1,9 @@
-import React from "react";
+import React, {Component} from "react";
 import "./LoserModal.css";
 import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 import InnerModal from "../InnerModal"
 import loser from "../../loser.json"
-
+import LoserClassModal from '../LoserClassModal'
 
 class LoserModal extends React.Component {
     constructor(props) {
@@ -24,14 +24,13 @@ class LoserModal extends React.Component {
   
    //run a math random function to cycle through pokemon loser / winner object 
     render() {
-      var randomNum=Math.floor(Math.random()*5);
-      console.log(randomNum);
+      // var randomNum=Math.floor(Math.random()*5);
+      // console.log(randomNum)
       return (
         <div>
           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
             <ModalBody>
-           <InnerModal image={loser[randomNum].image}
-           message={loser[randomNum].message} />
+            <LoserClassModal/>
             </ModalBody>
             <ModalFooter>
               <Button color="success" onClick={this.toggle}
