@@ -1,3 +1,17 @@
+
 img{
     width:100%;
 }
+
+
+/* .modal-backdrop{
+    background-image: url("./giphy-downsized.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;  
+
+    https://github.com/react-bootstrap/react-bootstrap/pull/696
+    https://github.com/react-bootstrap/react-bootstrap/issues/560
+
+
+} */
