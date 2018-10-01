@@ -22,14 +22,26 @@
 
 
 
-@media only screen and (max-width: 550px) {
+@media screen and (max-width:600px)and (min-width: 221px){
   .jumbotron-fluid{
     font-size: 2.5em;
   }
 
   .Title{
-    top:200px;
+    top:140px;
   }
   
  
+}
+
+@media screen and (max-width: 220px) and (min-width: 0px) {
+
+  .jumbotron-fluid{
+    font-size: 2.0em;
+    height:200px;
+  }
+
+  .Title{
+    top:60px;
+  }
 }

@@ -17,7 +17,7 @@ class ScoreboardMessage extends Component {
       newState.message = "";
     } else if (score === 0 && topScore > 0) {
       newState.message = "incorrect";
-    } else if (score === 2) {
+    } else if (score === 12) {
       newState.message = "winner"
     }
     else {
