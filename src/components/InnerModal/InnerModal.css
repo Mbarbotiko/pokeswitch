@@ -1,1 +1,10 @@
 
+.img-container{
+    height: 400px;
+
+
+}
+
+.img-container img{
+    height:350px;
+}

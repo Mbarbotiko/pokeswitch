@@ -3,6 +3,7 @@ import "./WinnerModal.css";
 import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 import InnerModal from "../InnerModal"
 import winner from "../../winner.json"
+const randomNum=Math.floor(Math.random()*5);
 
 class WinnerModal extends React.Component {
     constructor(props) {
@@ -23,7 +24,7 @@ class WinnerModal extends React.Component {
   
    //run a math random function to cycle through pokemon loser / winner object 
     render() {
-      var randomNum=Math.floor(Math.random()*5);
+      
       console.log(randomNum);
       return (
         <div>
