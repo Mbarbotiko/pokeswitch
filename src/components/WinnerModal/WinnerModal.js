@@ -3,7 +3,7 @@ import "./WinnerModal.css";
 import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 import InnerModal from "../InnerModal"
 import winner from "../../winner.json"
-const randomNum=Math.floor(Math.random()*5);
+var randomNum=Math.floor(Math.random()*5);
 
 class WinnerModal extends React.Component {
     constructor(props) {

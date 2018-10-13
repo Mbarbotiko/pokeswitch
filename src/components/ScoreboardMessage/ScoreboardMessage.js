@@ -17,11 +17,19 @@ class ScoreboardMessage extends Component {
       newState.message = "";
     } else if (score === 0 && topScore > 0) {
       newState.message = "incorrect";
-    } else if (score === 12) {
+      console.log(newState.message)
+    } else if (score===12){
+      //this score is getting set to 0 so switch isnt able to recognize when it gets to 12
       newState.message = "winner"
+      console.log(newState.message)
+      console.log(score)
+      console.log(topScore)
     }
     else {
       newState.message = "correct";
+      console.log(newState.message)
+      console.log(score)
+      console.log(topScore)
     }
     this.setState(newState, () =>
       setTimeout(() => this.setState({ animating: false }), 500)

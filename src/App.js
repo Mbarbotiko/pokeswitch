@@ -37,14 +37,24 @@ class App extends Component {
     const { topScore, score } = this.state;
     const newScore = score + 1;
     const newTopScore = newScore > topScore ? newScore : topScore;
-    this.setState({
-      pokemon: this.shufflePokemon(newPokemon),
-      score: newScore,
-      topScore: newTopScore
-    });
+    if (score === 12) {
+      //this is setting the switch to 0 too fast
+      this.setState({
+        pokemon: this.resetPokemon(pokemon),
+        score: 0,
+        topScore: newTopScore
+      });
+    } else {
+      // console.log(pokemon);
+      console.log(newPokemon);
+      this.setState({
+        pokemon: this.shufflePokemon(newPokemon),
+        score: newScore,
+        topScore: newTopScore
+      });
 
 
-
+    }
   };
   //if the user chooses a pokemon that hasnt been clicked yet set the score +1, if the new score is higher than the top score set the top score to the new score, execute function to mix up pokemon.
   incorrectGuessHandler = pokemon => {
@@ -90,7 +100,7 @@ class App extends Component {
 
       : this.incorrectGuessHandler(newPokemon);
 
-     
+
   }
 
   //changing pokemon that are clicked to true copying the object into "items" to check against if the user guessed Correctly run the correct guess function, if now run the incorect guess function.
